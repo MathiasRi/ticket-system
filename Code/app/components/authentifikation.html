@@ -1,0 +1,106 @@
+<div layout="row" layout-padding layout-align="center center">
+    <div class="auth-div" layout="column" flex-gt-md="50" flex-lg="50" flex-sm="100" flex-md="75">
+        <div style="text-align: center">
+            <h1 class="logo">
+                T!cket
+            </h1>
+        </div>
+        <div layout="column">
+            <md-whiteframe
+                    class="md-whiteframe-1dp">
+                <md-tabs
+                        md-center-tabs="true"
+                        md-stretch-tabs="always"
+                        md-dynamic-height="true"
+                        class="md-primary">
+                    <md-tab id="tab1">
+                        <md-tab-label>Login</md-tab-label>
+                        <md-tab-body>
+                            <div class="login-grid">
+                                <md-input-container class="login-email-container">
+                                    <label class="login-labels">E-Mail</label>
+                                    <input name="login_email"
+                                           ng-model="$ctrl.login_email"
+                                           type="email">
+                                </md-input-container>
+                                <md-input-container class="login-passwort-container">
+                                    <label class="login-labels">Passwort</label>
+                                    <input name="login_passwort"
+                                           ng-model="$ctrl.login_passwort"
+                                           type="password">
+                                </md-input-container>
+                                <md-checkbox class="login-check-button"
+                                             name="login_daten_merken"
+                                             ng-model="$ctrl.login_daten_merken">
+                                    Daten merken
+                                </md-checkbox>
+                            </div>
+                        </md-tab-body>
+                    </md-tab>
+                    <md-tab id="tab2">
+                        <md-tab-label>Registieren</md-tab-label>
+                        <md-tab-body>
+                            View for Item #2 <br/>
+                            data.selectedIndex = 1;
+                        </md-tab-body>
+                    </md-tab>
+                </md-tabs>
+            </md-whiteframe>
+        </div>
+    </div>
+</div>
+
+<style>
+
+    .login-labels {
+        font-size: 1.25em;
+    }
+
+    .login-grid {
+        margin: 3em 0.5em 3em 0.5em;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+    }
+
+    .login-email-container {
+        margin: 4em 2em 4em 2em;
+        grid-column-start: 1;
+        grid-column-end: 3;
+
+        grid-grow-start: 1;
+        grid-grow-end: 2;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+    .login-passwort-container {
+        margin: 4em 2em 4em 2em;
+
+        grid-column-start: 1;
+        grid-column-end: 3;
+
+        grid-grow-start: 2;
+        grid-grow-end: 3;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .login-check-button {
+
+        margin-left: 5% !important;
+
+        grid-column-start: 1;
+        grid-column-end: 3;
+
+        grid-grow-start: 3;
+        grid-grow-end: 4;
+
+        place-self: center !important;
+    }
+
+</style>
