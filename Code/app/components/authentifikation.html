@@ -1,5 +1,6 @@
 <div layout="row" layout-padding layout-align="center center">
     <div class="auth-div" layout="column" flex-gt-md="50" flex-lg="50" flex-sm="100" flex-md="75">
+    <div class="auth-div" layout="column" flex-gt-md="50" flex-lg="50" flex-sm="100" flex-md="75">
         <div style="text-align: center">
             <h1 class="logo">
                 T!cket
@@ -29,11 +30,17 @@
                                            ng-model="$ctrl.login_passwort"
                                            type="password">
                                 </md-input-container>
+                                <div layout="column" class="login-parameters">
                                 <md-checkbox class="login-check-button"
                                              name="login_daten_merken"
                                              ng-model="$ctrl.login_daten_merken">
                                     Daten merken
                                 </md-checkbox>
+                                    <a href="#">Passwort vergessen?</a>
+                                </div>
+                                <div class="login-in-button">
+                                    <md-button class="md-raised md-primary big-login-button">Login</md-button>
+                                </div>
                             </div>
                         </md-tab-body>
                     </md-tab>
@@ -49,6 +56,7 @@
         </div>
     </div>
 </div>
+</div>
 
 <style>
 
@@ -57,18 +65,20 @@
     }
 
     .login-grid {
-        margin: 3em 0.5em 3em 0.5em;
+
+        display: grid;
+        margin: 0em 6em 0em 6em;
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
     }
 
     .login-email-container {
-        margin: 4em 2em 4em 2em;
+        margin: 4em -3em 4em -3em;
         grid-column-start: 1;
         grid-column-end: 3;
 
-        grid-grow-start: 1;
-        grid-grow-end: 2;
+        grid-row-start: 1;
+        grid-row-end: 2;
 
         display: flex;
         justify-content: center;
@@ -77,30 +87,45 @@
 
 
     .login-passwort-container {
-        margin: 4em 2em 4em 2em;
+        margin: 4em -3em 4em -3em;
 
         grid-column-start: 1;
         grid-column-end: 3;
 
-        grid-grow-start: 2;
-        grid-grow-end: 3;
+        grid-row-start: 2;
+        grid-row-end: 3;
 
         display: flex;
         justify-content: center;
         align-items: center;
     }
 
-    .login-check-button {
+    .login-parameters {
 
-        margin-left: 5% !important;
+        margin-left: -2.5em !important;
 
         grid-column-start: 1;
+        grid-column-end: 2;
+
+        grid-row-start: 3;
+        grid-row-end: 4;
+    }
+
+    .login-in-button {
+
+        grid-column-start: 2;
         grid-column-end: 3;
 
-        grid-grow-start: 3;
-        grid-grow-end: 4;
+        grid-row-start: 3;
+        grid-row-end: 4;
 
-        place-self: center !important;
+
+        justify-self: end;
+    }
+
+    .big-login-button {
+        width: 300px;
+        height: 70px
     }
 
 </style>
