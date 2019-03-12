@@ -1,6 +1,5 @@
 <div layout="row" layout-padding layout-align="center center">
     <div class="auth-div" layout="column" flex-gt-md="50" flex-lg="50" flex-sm="100" flex-md="75">
-    <div class="auth-div" layout="column" flex-gt-md="50" flex-lg="50" flex-sm="100" flex-md="75">
         <div style="text-align: center">
             <h1 class="logo">
                 T!cket
@@ -31,15 +30,15 @@
                                            type="password">
                                 </md-input-container>
                                 <div layout="column" class="login-parameters">
-                                <md-checkbox class="login-check-button"
-                                             name="login_daten_merken"
-                                             ng-model="$ctrl.login_daten_merken">
-                                    Daten merken
-                                </md-checkbox>
+                                    <md-checkbox class="login-check-button"
+                                                 name="login_daten_merken"
+                                                 ng-model="$ctrl.login_daten_merken">
+                                        Daten merken
+                                    </md-checkbox>
                                     <a href="#">Passwort vergessen?</a>
                                 </div>
                                 <div class="login-in-button">
-                                    <md-button class="md-raised md-primary big-login-button">Login</md-button>
+                                    <md-button class="md-raised md-primary big-button">Login</md-button>
                                 </div>
                             </div>
                         </md-tab-body>
@@ -47,8 +46,51 @@
                     <md-tab id="tab2">
                         <md-tab-label>Registieren</md-tab-label>
                         <md-tab-body>
-                            View for Item #2 <br/>
-                            data.selectedIndex = 1;
+                            <div class="register-grid">
+                                <md-input-container class="register-firstname-container">
+                                    <label class="register-labels">Vorname</label>
+                                    <input name="register_firstname"
+                                           ng-model="$ctrl.register_firstname">
+                                </md-input-container>
+                                <md-input-container class="register-lastname-container">
+                                    <label class="register-labels">Nachname</label>
+                                    <input name="register_lastname"
+                                           ng-model="$ctrl.register_lastname">
+                                </md-input-container>
+                                <md-input-container class="register-email-container">
+                                    <label class="register-labels">E-Mail</label>
+                                    <input name="register_email"
+                                           ng-model="$ctrl.register_email"
+                                           type="email">
+                                </md-input-container>
+                                <md-input-container class="register-code-container">
+                                    <label class="register-labels">Token</label>
+                                    <input name="register_code"
+                                           ng-model="$ctrl.register_code">
+                                </md-input-container>
+                                <md-input-container class="register-passwort-container">
+                                    <label class="register-labels">Passwort</label>
+                                    <input name="register_passwort"
+                                           ng-model="$ctrl.register_passwort"
+                                           type="password">
+                                </md-input-container>
+                                <md-input-container class="register-repeat-passwort-container">
+                                    <label class="register-labels">Passwort wiederholen</label>
+                                    <input name="register_repeat_passwort"
+                                           ng-model="$ctrl.register_repeat_passwort"
+                                           type="password">
+                                </md-input-container>
+                                <div layout="column" class="register-parameters">
+                                    <md-checkbox class="register-check-button"
+                                                 name="register_agb"
+                                                 ng-model="$ctrl.register_agb">
+                                        Ich habe die Allgemeinen Geschäftsbedingungen gelesen und akzeptiere diese.
+                                    </md-checkbox>
+                                </div>
+                                <div class="register-in-button">
+                                    <md-button class="md-raised md-primary big-button">Registrieren</md-button>
+                                </div>
+                            </div>
                         </md-tab-body>
                     </md-tab>
                 </md-tabs>
@@ -56,18 +98,15 @@
         </div>
     </div>
 </div>
-</div>
 
 <style>
-
-    .login-labels {
+    .login-labels, .register-labels {
         font-size: 1.25em;
     }
 
     .login-grid {
-
         display: grid;
-        margin: 0em 6em 0em 6em;
+        margin: 0 6em 0 6em;
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 1fr 1fr 1fr;
     }
@@ -85,7 +124,6 @@
         align-items: center;
     }
 
-
     .login-passwort-container {
         margin: 4em -3em 4em -3em;
 
@@ -101,7 +139,6 @@
     }
 
     .login-parameters {
-
         margin-left: -2.5em !important;
 
         grid-column-start: 1;
@@ -112,20 +149,90 @@
     }
 
     .login-in-button {
-
         grid-column-start: 2;
         grid-column-end: 3;
 
         grid-row-start: 3;
         grid-row-end: 4;
 
-
         justify-self: end;
     }
 
-    .big-login-button {
+    .big-button {
         width: 300px;
         height: 70px
     }
 
+    .register-grid {
+        display: grid;
+        margin: 2em 6em 2em 6em;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    }
+
+    .register-firstname-container {
+        grid-column-start: 1;
+        grid-column-end: 2;
+
+        grid-row-start: 1;
+        grid-row-end: 2;
+    }
+
+    .register-lastname-container {
+        grid-column-start: 2;
+        grid-column-end: 3;
+
+        grid-row-start: 1;
+        grid-row-end: 2;
+    }
+
+    .register-email-container {
+        grid-column-start: 1;
+        grid-column-end: 3;
+
+        grid-row-start: 2;
+        grid-row-end: 3;
+    }
+
+    .register-code-container {
+        grid-column-start: 1;
+        grid-column-end: 3;
+
+        grid-row-start: 3;
+        grid-row-end: 4;
+    }
+
+    .register-passwort-container {
+        grid-column-start: 1;
+        grid-column-end: 2;
+
+        grid-row-start: 4;
+        grid-row-end: 5;
+    }
+
+    .register-repeat-passwort-container {
+        grid-column-start: 2;
+        grid-column-end: 3;
+
+        grid-row-start: 4;
+        grid-row-end: 5;
+    }
+
+    .register-parameters {
+        grid-column-start: 1;
+        grid-column-end: 2;
+
+        grid-row-start: 5;
+        grid-row-end: 6;
+    }
+
+    .register-in-button {
+        grid-column-start: 2;
+        grid-column-end: 3;
+
+        grid-row-start: 5;
+        grid-row-end: 6;
+
+        place-self: center;
+    }
 </style>
