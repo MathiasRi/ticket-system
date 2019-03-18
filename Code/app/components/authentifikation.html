@@ -46,7 +46,7 @@
                                     </div>
                                     <br/>
                                     <div layout="column">
-                                        <md-button class="md-raised md-primary big-button" ng-disabled="$ctrl.login_form.$invalid">Login</md-button>
+                                        <md-button class="md-raised md-primary big-button" ng-disabled="$ctrl.login_form.$invalid" ui-sref="ticket-ansicht">Login</md-button>
                                     </div>
                                 </div>
                             </div>
@@ -56,51 +56,80 @@
                     <md-tab id="tab2">
                         <md-tab-label>Registieren</md-tab-label>
                         <md-tab-body>
+                            <form name="$ctrl.reg_form">
                             <div layout="column">
                                 <div layout="row" class="container-item">
                                     <md-input-container flex="40">
                                         <label>Vorname</label>
-                                        <input name="reg_vorname" ng-model="$ctrl.reg_vorname" required minlength="2">
+                                        <input name="reg_vorname" ng-model="$ctrl.reg_vorname" required>
+                                        <div ng-messages="$ctrl.reg_form.reg_vorname.$error">
+                                            <div ng-message="required">Geben Sie einen Vornamen ein.</div>
+                                        </div>
                                     </md-input-container>
                                     <md-input-container flex="40">
                                         <label>Nachname</label>
-                                        <input name="reg_nachname" ng-model="$ctrl.reg_nachname" required minlength="2">
+                                        <input name="reg_nachname" ng-model="$ctrl.reg_nachname" required>
+                                        <div ng-messages="$ctrl.reg_form.reg_nachname.$error">
+                                            <div ng-message="required">Geben Sie einen Nachnamen ein.</div>
+                                        </div>
                                     </md-input-container>
                                 </div>
                                 <div layout="row" class="container-item">
                                     <md-input-container flex="90">
                                         <label>E-Mail</label>
                                         <input name="reg_email" ng-model="$ctrl.reg_email" type="email" required>
+                                        <div ng-messages="$ctrl.reg_form.reg_email.$error">
+                                            <div ng-message="email">Geben Sie eine gültige E-Mail ein.</div>
+                                            <div ng-message="required">Geben Sie eine E-Mail ein.</div>
+                                        </div>
                                     </md-input-container>
                                 </div>
                                 <div layout="row" class="container-item">
                                     <md-input-container flex="90">
                                         <label>Token</label>
-                                        <input name="reg_token" ng-model="$ctrl.reg_token" type="text" required>
+                                        <input name="reg_token" ng-model="$ctrl.reg_token" type="text" required placeholder="#KS000000">
+                                        <div ng-messages="$ctrl.reg_form.reg_token.$error">
+                                            <div ng-message="required">Geben Sie einen Token ein.</div>
+                                        </div>
                                     </md-input-container>
                                 </div>
                                 <div layout="row" class="container-item">
                                     <md-input-container flex="40">
                                         <label>Passwort</label>
-                                        <input name="reg_password_1" ng-model="$ctrl.reg_password_1" type="password" required>
+                                        <input name="reg_password_1"
+                                               ng-model="$ctrl.reg_password_1"
+                                               ng-pattern="{{ $ctrl.reg_password_2 }}"
+                                               type="password" required>
+                                        <div ng-messages="$ctrl.reg_form.reg_password_1.$error">
+                                            <div ng-message="required">Geben Sie ein Passwort ein.</div>
+                                            <div ng-message="pattern">Die Passwörter stimmen nicht überein.</div>
+                                        </div>
                                     </md-input-container>
                                     <md-input-container flex="40">
                                         <label>Passwort wiederholen</label>
-                                        <input name="reg_password_2" ng-model="$ctrl.reg_password_2" type="password" required>
+                                        <input name="reg_password_2"
+                                               ng-model="$ctrl.reg_password_2"
+                                               ng-pattern="{{ $ctrl.reg_password_1 }}"
+                                               type="password" required>
+                                        <div ng-messages="$ctrl.reg_form.reg_password_2.$error">
+                                            <div ng-message="required">Geben Sie ein Passwort ein.</div>
+                                            <div ng-message="pattern">Die Passwörter stimmen nicht überein.</div>
+                                        </div>
                                     </md-input-container>
                                 </div>
                                 <div layout="row" class="container-item bottom-params">
                                     <div layout="column">
                                         <md-checkbox ng-model="$ctrl.reg_agbs" name="reg_agbs">
-                                            Ich habe die AGBs gelesen und aktzeptiere diese.
+                                            Ich habe die <span style="color: orange;" ng-click="$ctrl.showConfirm()">AGBs</span> gelesen und aktzeptiere diese.
                                         </md-checkbox>
                                     </div>
                                     <br/>
                                     <div layout="column">
-                                        <md-button class="md-raised md-primary big-button">Registrieren</md-button>
+                                        <md-button class="md-raised md-primary big-button" ng-disabled="$ctrl.reg_form.$invalid">Registrieren</md-button>
                                     </div>
                                 </div>
                             </div>
+                            </form>
                         </md-tab-body>
                     </md-tab>
                 </md-tabs>
