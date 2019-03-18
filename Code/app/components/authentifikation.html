@@ -16,29 +16,37 @@
                     <md-tab id="tab1">
                         <md-tab-label>Login</md-tab-label>
                         <md-tab-body>
-                            <div class="login-grid">
-                                <md-input-container class="login-email-container">
-                                    <label class="login-labels">E-Mail</label>
-                                    <input name="login_email"
-                                           ng-model="$ctrl.login_email"
-                                           type="email">
-                                </md-input-container>
-                                <md-input-container class="login-passwort-container">
-                                    <label class="login-labels">Passwort</label>
-                                    <input name="login_passwort"
-                                           ng-model="$ctrl.login_passwort"
-                                           type="password">
-                                </md-input-container>
-                                <div layout="column" class="login-parameters">
-                                    <md-checkbox class="login-check-button"
-                                                 name="login_daten_merken"
-                                                 ng-model="$ctrl.login_daten_merken">
-                                        Daten merken
-                                    </md-checkbox>
-                                    <a href="#">Passwort vergessen?</a>
+                            <div layout="column">
+                                <div layout="row" class="container-item">
+                                    <md-input-container flex="80">
+                                        <label>E-Mail</label>
+                                        <input name="email" ng-model="$ctrl.email" type="email" required>
+                                        <div ng-messages="$ctrl.formular.email.$error">
+                                            <div ng-message="required">Bitte geben Sie eine E-Mail an.</div>
+                                            <div ng-message="email">Keine Mailadresse.</div>
+                                        </div>
+                                    </md-input-container>
                                 </div>
-                                <div class="login-in-button">
-                                    <md-button class="md-raised md-primary big-button">Login</md-button>
+                                <div layout="row" class="container-item">
+                                    <md-input-container flex="80">
+                                        <label>Passwort</label>
+                                        <input name="password" ng-model="$ctrl.password" type="password" required>
+                                        <div ng-messages="$ctrl.formular.password.$error">
+                                            <div ng-message="required">Bitte geben Sie eine E-Mail an.</div>
+                                            <div ng-message="password">Keine Mailadresse.</div>
+                                        </div>
+                                    </md-input-container>
+                                </div>
+                                <div layout="row" class="container-item bottom-params">
+                                    <div layout="column">
+                                        <md-checkbox ng-model="$ctrl.daten_merken" name="daten_merken">
+                                            Daten merken
+                                        </md-checkbox>
+                                        <a href="#">Passwort vergessen?</a>
+                                    </div>
+                                    <div layout="column">
+                                        <md-button class="md-raised md-primary big-button">Login</md-button>
+                                    </div>
                                 </div>
                             </div>
                         </md-tab-body>
@@ -46,49 +54,53 @@
                     <md-tab id="tab2">
                         <md-tab-label>Registieren</md-tab-label>
                         <md-tab-body>
-                            <div class="register-grid">
-                                <md-input-container class="register-firstname-container">
-                                    <label class="register-labels">Vorname</label>
-                                    <input name="register_firstname"
-                                           ng-model="$ctrl.register_firstname">
-                                </md-input-container>
-                                <md-input-container class="register-lastname-container">
-                                    <label class="register-labels">Nachname</label>
-                                    <input name="register_lastname"
-                                           ng-model="$ctrl.register_lastname">
-                                </md-input-container>
-                                <md-input-container class="register-email-container">
-                                    <label class="register-labels">E-Mail</label>
-                                    <input name="register_email"
-                                           ng-model="$ctrl.register_email"
-                                           type="email">
-                                </md-input-container>
-                                <md-input-container class="register-code-container">
-                                    <label class="register-labels">Token</label>
-                                    <input name="register_code"
-                                           ng-model="$ctrl.register_code">
-                                </md-input-container>
-                                <md-input-container class="register-passwort-container">
-                                    <label class="register-labels">Passwort</label>
-                                    <input name="register_passwort"
-                                           ng-model="$ctrl.register_passwort"
-                                           type="password">
-                                </md-input-container>
-                                <md-input-container class="register-repeat-passwort-container">
-                                    <label class="register-labels">Passwort wiederholen</label>
-                                    <input name="register_repeat_passwort"
-                                           ng-model="$ctrl.register_repeat_passwort"
-                                           type="password">
-                                </md-input-container>
-                                <div layout="column" class="register-parameters">
-                                    <md-checkbox class="register-check-button"
-                                                 name="register_agb"
-                                                 ng-model="$ctrl.register_agb">
-                                        Ich habe die Allgemeinen Geschäftsbedingungen gelesen und akzeptiere diese.
-                                    </md-checkbox>
+                            <div layout="column">
+                                <div layout="row" class="container-item">
+                                    <md-input-container flex="40">
+                                        <label>Vorname</label>
+                                        <input name="username" ng-model="$ctrl.vorname" required minlength="2">
+                                    </md-input-container>
+                                    <md-input-container flex="40">
+                                        <label>Nachname</label>
+                                        <input name="Nachname" ng-model="$ctrl.Nachname" required minlength="2">
+                                    </md-input-container>
                                 </div>
-                                <div class="register-in-button">
-                                    <md-button class="md-raised md-primary big-button">Registrieren</md-button>
+                                <div layout="row" class="container-item">
+                                    <md-input-container flex="90">
+                                        <label>E-Mail</label>
+                                        <input name="email" ng-model="$ctrl.email" type="email" required>
+                                        <div ng-messages="$ctrl.formular.email.$error">
+                                            <div ng-message="required">Bitte geben Sie eine E-Mail an.</div>
+                                            <div ng-message="email">Keine Mailadresse.</div>
+                                        </div>
+                                    </md-input-container>
+                                </div>
+                                <div layout="row" class="container-item">
+                                    <md-input-container flex="90">
+                                        <label>Token</label>
+                                        <input name="token" ng-model="$ctrl.token" type="text" required>
+                                    </md-input-container>
+                                </div>
+                                <div layout="row" class="container-item">
+                                    <md-input-container flex="40">
+                                        <label>Vorname</label>
+                                        <input name="username" ng-model="$ctrl.vorname" required minlength="2">
+                                    </md-input-container>
+                                    <md-input-container flex="40">
+                                        <label>Nachname</label>
+                                        <input name="Nachname" ng-model="$ctrl.Nachname" required minlength="2">
+                                    </md-input-container>
+                                </div>
+                                <div layout="row" class="container-item bottom-params">
+                                    <div layout="column">
+                                        <md-checkbox ng-model="$ctrl.daten_merken" name="daten_merken">
+                                            Daten merken
+                                        </md-checkbox>
+                                        <a href="#">Passwort vergessen?</a>
+                                    </div>
+                                    <div layout="column">
+                                        <md-button class="md-raised md-primary big-button">Login</md-button>
+                                    </div>
                                 </div>
                             </div>
                         </md-tab-body>
