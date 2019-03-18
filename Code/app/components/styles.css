@@ -1,0 +1,16 @@
+.menu-panel-footer {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+}
+
+.menu-navigator-footer {
+    justify-content: space-around;
+}
+
+.menu-navigator-top {
+    justify-content: space-around;
+
+}

@@ -1,0 +1,58 @@
+<div layout="column">
+    <div class="menu-panel-top">
+        <md-toolbar class="md-scroll-shrink">
+            <div layout="row" layout-align="center center" class="menu-navigator-top" flex>
+                <div class="icon-div" layout="column">
+                    <i class="fas fa-bell"></i>
+                    <p ng-hide="true">Nachrichten</p>
+                </div>
+                <div class="icon-div" layout="column" ng-hide="$ctrl.burger_menu_open">
+                    T!cket-Ansicht
+                </div>
+                <div class="lock-size" layout="row" layout-align="center center">
+                <div class="icon-div" layout="column">
+                    <md-fab-speed-dial ng-model="$ctrl.burger_menu" ng-click="$ctrl.burger_menu_open = !$ctrl.burger_menu_open" md-open="$ctrl.isOpen" md-direction="left"
+                                       ng-class="$ctrl.selectedMode">
+                        <md-fab-trigger>
+                            <md-button aria-label="menu" class="md-fab md-warn">
+                                <md-icon><i class="fas fa-bars"></i></md-icon>
+                            </md-button>
+                        </md-fab-trigger>
+
+                        <md-fab-actions>
+                            <md-button aria-label="Einstellungen" class="md-fab md-raised md-mini">
+                                <md-icon arial-label="Einstellungen"><i class="fas fa-cog"></i></md-icon>
+                            </md-button>
+                            <md-button aria-label="Statistik" class="md-fab md-raised md-mini">
+                                <md-icon aria-label="Statistik"><i class="far fa-chart-bar"></i></md-icon>
+                            </md-button>
+                            <md-button aria-label="Kontakt (Admin)" class="md-fab md-raised md-mini">
+                                <md-icon aria-label="Kontakt (Admin)"><i class="fas fa-envelope"></i></md-icon>
+                            </md-button>
+                        </md-fab-actions>
+                    </md-fab-speed-dial>
+                    <p ng-hide="true">Menü</p>
+                </div>
+            </div>
+            </div>
+        </md-toolbar>
+    </div>
+    <div class="menu-panel-footer">
+        <md-toolbar class="md-scroll-shrink">
+            <div layout="row" layout-align="center center" class="menu-navigator-footer" flex>
+                <div class="icon-div" layout="column">
+                    <i class="fas fa-ticket-alt"></i>
+                    <p ng-hide="true">Meine T!ckets</p>
+                </div>
+                <div class="icon-div" layout="column">
+                    <i class="fas fa-plus-circle"></i>
+                    <p ng-hide="true">T!cket hinzufügen</p>
+                </div>
+                <div class="icon-div" layout="column">
+                    <i class="fas fa-user"></i>
+                    <p ng-hide="true">Profil</p>
+                </div>
+            </div>
+        </md-toolbar>
+    </div>
+</div>
