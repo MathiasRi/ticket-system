@@ -16,39 +16,41 @@
                     <md-tab id="tab1">
                         <md-tab-label>Login</md-tab-label>
                         <md-tab-body>
+                            <form name="$ctrl.login_form">
                             <div layout="column">
                                 <div layout="row" class="container-item">
                                     <md-input-container flex="80">
                                         <label>E-Mail</label>
-                                        <input name="email" ng-model="$ctrl.email" type="email" required>
-                                        <div ng-messages="$ctrl.formular.email.$error">
-                                            <div ng-message="required">Bitte geben Sie eine E-Mail an.</div>
-                                            <div ng-message="email">Keine Mailadresse.</div>
+                                        <input name="login_email" ng-model="$ctrl.login_email" type="email" required>
+                                        <div ng-messages="$ctrl.login_form.login_email.$error">
+                                            <div ng-message="email">Geben Sie eine gültige E-Mail ein.</div>
+                                            <div ng-message="required">Geben Sie eine E-Mail ein.</div>
                                         </div>
                                     </md-input-container>
                                 </div>
                                 <div layout="row" class="container-item">
                                     <md-input-container flex="80">
                                         <label>Passwort</label>
-                                        <input name="password" ng-model="$ctrl.password" type="password" required>
-                                        <div ng-messages="$ctrl.formular.password.$error">
-                                            <div ng-message="required">Bitte geben Sie eine E-Mail an.</div>
-                                            <div ng-message="password">Keine Mailadresse.</div>
+                                        <input name="login_password" ng-model="$ctrl.login_password" type="password" required>
+                                        <div ng-messages="$ctrl.login_form.login_password.$error">
+                                            <div ng-message="required">Geben Sie ein Passwort ein.</div>
                                         </div>
                                     </md-input-container>
                                 </div>
                                 <div layout="row" class="container-item bottom-params">
                                     <div layout="column">
-                                        <md-checkbox ng-model="$ctrl.daten_merken" name="daten_merken">
+                                        <md-checkbox ng-model="$ctrl.login_daten_merken" name="login_daten_merken">
                                             Daten merken
                                         </md-checkbox>
                                         <a href="#">Passwort vergessen?</a>
                                     </div>
+                                    <br/>
                                     <div layout="column">
-                                        <md-button class="md-raised md-primary big-button">Login</md-button>
+                                        <md-button class="md-raised md-primary big-button" ng-disabled="$ctrl.login_form.$invalid">Login</md-button>
                                     </div>
                                 </div>
                             </div>
+                            </form>
                         </md-tab-body>
                     </md-tab>
                     <md-tab id="tab2">
@@ -58,48 +60,44 @@
                                 <div layout="row" class="container-item">
                                     <md-input-container flex="40">
                                         <label>Vorname</label>
-                                        <input name="username" ng-model="$ctrl.vorname" required minlength="2">
+                                        <input name="reg_vorname" ng-model="$ctrl.reg_vorname" required minlength="2">
                                     </md-input-container>
                                     <md-input-container flex="40">
                                         <label>Nachname</label>
-                                        <input name="Nachname" ng-model="$ctrl.Nachname" required minlength="2">
+                                        <input name="reg_nachname" ng-model="$ctrl.reg_nachname" required minlength="2">
                                     </md-input-container>
                                 </div>
                                 <div layout="row" class="container-item">
                                     <md-input-container flex="90">
                                         <label>E-Mail</label>
-                                        <input name="email" ng-model="$ctrl.email" type="email" required>
-                                        <div ng-messages="$ctrl.formular.email.$error">
-                                            <div ng-message="required">Bitte geben Sie eine E-Mail an.</div>
-                                            <div ng-message="email">Keine Mailadresse.</div>
-                                        </div>
+                                        <input name="reg_email" ng-model="$ctrl.reg_email" type="email" required>
                                     </md-input-container>
                                 </div>
                                 <div layout="row" class="container-item">
                                     <md-input-container flex="90">
                                         <label>Token</label>
-                                        <input name="token" ng-model="$ctrl.token" type="text" required>
+                                        <input name="reg_token" ng-model="$ctrl.reg_token" type="text" required>
                                     </md-input-container>
                                 </div>
                                 <div layout="row" class="container-item">
                                     <md-input-container flex="40">
-                                        <label>Vorname</label>
-                                        <input name="username" ng-model="$ctrl.vorname" required minlength="2">
+                                        <label>Passwort</label>
+                                        <input name="reg_password_1" ng-model="$ctrl.reg_password_1" type="password" required>
                                     </md-input-container>
                                     <md-input-container flex="40">
-                                        <label>Nachname</label>
-                                        <input name="Nachname" ng-model="$ctrl.Nachname" required minlength="2">
+                                        <label>Passwort wiederholen</label>
+                                        <input name="reg_password_2" ng-model="$ctrl.reg_password_2" type="password" required>
                                     </md-input-container>
                                 </div>
                                 <div layout="row" class="container-item bottom-params">
                                     <div layout="column">
-                                        <md-checkbox ng-model="$ctrl.daten_merken" name="daten_merken">
-                                            Daten merken
+                                        <md-checkbox ng-model="$ctrl.reg_agbs" name="reg_agbs">
+                                            Ich habe die AGBs gelesen und aktzeptiere diese.
                                         </md-checkbox>
-                                        <a href="#">Passwort vergessen?</a>
                                     </div>
+                                    <br/>
                                     <div layout="column">
-                                        <md-button class="md-raised md-primary big-button">Login</md-button>
+                                        <md-button class="md-raised md-primary big-button">Registrieren</md-button>
                                     </div>
                                 </div>
                             </div>
