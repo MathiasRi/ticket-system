@@ -2,7 +2,7 @@
     <form name="$ctrl.te_form">
         <div layout="column">
             <div align="center">
-                <h2>Neues T!cket hinzufügen</h2>
+                <h2>Neues T!cket</h2>
             </div>
             <div layout="row" class="container-item">
                 <md-input-container flex="80">
@@ -27,19 +27,16 @@
                     </div>
                 </md-input-container>
             </div>
+            <div layout="column" class="container-item">
+                <div>
+                    <h3>Beschreibung</h3>
+                </div>
+                <div layout="row" flex="100">
+                    <textarea class="description-textarea" name="te_beschreibung" ng-model="$ctrl.te_beschreibung" required></textarea>
+                </div>
+            </div>
             <div layout="row" class="container-item bottom-params">
-                <div layout="column">
-                    <md-checkbox ng-model="$ctrl.login_daten_merken" name="login_daten_merken">
-                        Daten merken
-                    </md-checkbox>
-                    <a href="#">Passwort vergessen?</a>
-                </div>
-                <br/>
-                <div layout="column">
-                    <a ui-sref="ticket-ansicht-user">
-                        <md-button class="md-raised md-primary big-button" ng-disabled="$ctrl.te_form.$invalid">Login</md-button>
-                    </a>
-                </div>
+                <md-button class="md-raised md-primary big-button" ng-disabled="$ctrl.te_form.$invalid" ng-click="$ctrl.showConfirm()">Ticket erstellen</md-button>
             </div>
         </div>
     </form>

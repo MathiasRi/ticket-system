@@ -14,3 +14,12 @@
     justify-content: space-around;
 
 }
+
+.description-textarea {
+    border-color: #000000;
+    max-width: 300px;
+    width: 300px;
+    max-height: 200px;
+    height: 200px;
+    resize: none;
+}
