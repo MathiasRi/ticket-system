@@ -1,0 +1,42 @@
+<md-tab id="tab1">
+    <md-tab-label>Login</md-tab-label>
+    <md-tab-body>
+        <form name="$ctrl.login_form">
+            <div layout="column">
+                <div layout="row" class="container-item">
+                    <md-input-container flex="80">
+                        <label>E-Mail</label>
+                        <input name="login_email" ng-model="$ctrl.login_email" type="email" required>
+                        <div ng-messages="$ctrl.login_form.login_email.$error">
+                            <div ng-message="email">Geben Sie eine gültige E-Mail ein.</div>
+                            <div ng-message="required">Geben Sie eine E-Mail ein.</div>
+                        </div>
+                    </md-input-container>
+                </div>
+                <div layout="row" class="container-item">
+                    <md-input-container flex="80">
+                        <label>Passwort</label>
+                        <input name="login_password" ng-model="$ctrl.login_password" type="password" required>
+                        <div ng-messages="$ctrl.login_form.login_password.$error">
+                            <div ng-message="required">Geben Sie ein Passwort ein.</div>
+                        </div>
+                    </md-input-container>
+                </div>
+                <div layout="row" class="container-item bottom-params">
+                    <div layout="column">
+                        <md-checkbox ng-model="$ctrl.login_daten_merken" name="login_daten_merken">
+                            Daten merken
+                        </md-checkbox>
+                        <a href="#">Passwort vergessen?</a>
+                    </div>
+                    <br/>
+                    <div layout="column">
+                        <a ui-sref="ticket-ansicht-user">
+                            <md-button class="md-raised md-primary big-button" ng-disabled="$ctrl.login_form.$invalid">Login</md-button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </md-tab-body>
+</md-tab>

@@ -1,0 +1,46 @@
+<div>
+    <form name="$ctrl.te_form">
+        <div layout="column">
+            <div align="center">
+                <h2>Neues T!cket hinzufügen</h2>
+            </div>
+            <div layout="row" class="container-item">
+                <md-input-container flex="80">
+                    <label>Titel</label>
+                    <input name="te_titel" ng-model="$ctrl.te_titel" type="text" minlength="3" required>
+                    <div ng-messages="$ctrl.te_form.te_titel.$error">
+                        <div ng-message="minlength">Der Titel muss mindestens 3 Zeichen lang sein.</div>
+                        <div ng-message="required">Geben Sie einen Titel ein.</div>
+                    </div>
+                </md-input-container>
+            </div>
+            <div layout="row" class="container-item">
+                <md-input-container flex="80">
+                    <label>Kategorie</label>
+                    <md-select name="te_kategorie" ng-model="$ctrl.te_kategorie" required>
+                        <md-option value="kat1">Kategorie 1</md-option>
+                        <md-option value="kat2">Kategorie 2</md-option>
+                        <md-option value="kat3">Kategorie 3</md-option>
+                    </md-select>
+                    <div ng-messages="$ctrl.te_form.te_kategorie.$error">
+                        <div ng-message="required">Bitte wählen Sie eine Kategorie aus.</div>
+                    </div>
+                </md-input-container>
+            </div>
+            <div layout="row" class="container-item bottom-params">
+                <div layout="column">
+                    <md-checkbox ng-model="$ctrl.login_daten_merken" name="login_daten_merken">
+                        Daten merken
+                    </md-checkbox>
+                    <a href="#">Passwort vergessen?</a>
+                </div>
+                <br/>
+                <div layout="column">
+                    <a ui-sref="ticket-ansicht-user">
+                        <md-button class="md-raised md-primary big-button" ng-disabled="$ctrl.te_form.$invalid">Login</md-button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
