@@ -3,7 +3,7 @@
 app.component("ticketEditor", {
     templateUrl: "components/ticket-editor.html",
     controller: "TicketEditorController",
-    bindings: {}
+    bindings: { ticketItem : "&" }
 });
 
 
@@ -18,8 +18,8 @@ app.controller("TicketEditorController", function ($log, $mdDialog) {
         let confirm = $mdDialog.confirm()
             .title('Ticket wirklich erstellen?')
             .textContent(params)
-            .ok('Ja.')
-            .cancel('Nein.');
+            .ok('Ja')
+            .cancel('Nein');
 
         $mdDialog.show(confirm).then(() => {
             this.status = 'Hinzugefügt';
@@ -28,6 +28,9 @@ app.controller("TicketEditorController", function ($log, $mdDialog) {
             //In Factory hinzufügen
 
 
+
+            this.ticket = new Ticket (this.te_titel, this.te_beschreibung, this.te_kategorie);
+            this.neuesTicket();
             this.te_form.$setUntouched();
             this.te_titel = "";
             this.te_kategorie = "";
@@ -45,12 +48,9 @@ app.controller("TicketEditorController", function ($log, $mdDialog) {
     };
 
 
-    /*$mdDialog.show(confirm).then(function() {
-        $scope.status = 'You decided to get rid of your debt.';
-    }, function() {
-        $scope.status = 'You decided to keep your debt.';
-    });*/
-
+    this.neuesTicket = () => {
+        this.ticketItem({ticket : this.ticket});
+    };
 
 
 });

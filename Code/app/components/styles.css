@@ -1,5 +1,5 @@
 .menu-panel-footer {
-    position: absolute;
+    position: fixed;
     right: 0;
     bottom: 0;
     left: 0;
@@ -22,4 +22,23 @@
     max-height: 200px;
     height: 200px;
     resize: none;
+}
+
+@media screen and (min-width: 800px) {
+
+    .ticket-editor-input {
+        flex-direction: row;
+    }
+
+    .ticket-editor-input .container-item {
+        flex: 50;
+    }
+
+    .description-textarea {
+        max-width: 800px;
+        width: 800px;
+
+        max-height: 100px;
+        height: 100px;
+    }
 }

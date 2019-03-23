@@ -2,9 +2,11 @@
 
 app.factory("Ticket", function () {
 
-    function Ticket(description, category){
+    function Ticket(title, description, category){
+        this.title = title || "";
         this.description = description || "";
         this.category = category || "";
+        this.state = 'Pending...';
     }
 
 
