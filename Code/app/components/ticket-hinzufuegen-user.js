@@ -19,5 +19,4 @@ app.controller("TicketHinzufuegenUserController", function ($log) {
 
     $log.debug("TicketHinzufuegenUserController()");
 
-
 });

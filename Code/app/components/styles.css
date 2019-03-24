@@ -41,6 +41,30 @@
         max-height: 100px;
         height: 100px;
     }
+
+    #mobile_ansicht {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    #ticket_ansicht_user_desktop_ansicht {
+        display: none;
+    }
+
+    #ticket_hinzufuegen_user_desktop_ansicht {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 1100px) {
+    #ticket_ansicht_user_mobile_ansicht {
+        display: none;
+    }
+
+    #ticket_hinzufuegen_user_mobile_ansicht {
+        display: none;
+    }
 }
 
 .menu-panel-left {
@@ -59,4 +83,16 @@
 
 .left-menu-icon-div .md-fab {
     margin-top: 5%;
+}
+
+.ticket-ansicht-user-div {
+    margin-left: 300px;
+    height: 100%;
+    width: 82.5%;
+}
+
+.ticket-hinzufuegen-user-div {
+    margin-left: 300px;
+    height: 100%;
+    width: 82.5%;
 }
