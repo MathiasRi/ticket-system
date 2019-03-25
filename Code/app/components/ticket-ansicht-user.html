@@ -3,7 +3,9 @@
         <menu-navigator-top></menu-navigator-top>
     </div>
     <div>
-        <!--<ticket-liste></ticket-liste>-->
+        <div align="center">
+            <h1>Meine T!ckets</h1>
+        </div>
         <ticket-item ng-repeat="t in $ctrl.tickets track by $index" ticket-item="t"></ticket-item>
     </div>
     <div>
@@ -15,11 +17,10 @@
     <div>
         <menu-navigator-left></menu-navigator-left>
     </div>
-    <div class="ticket-ansicht-user-div">
+    <div class="ticket-ansicht-user-desktop-div">
         <div align="center">
             <h1>Meine T!ckets</h1>
         </div>
-        <!--<ticket-liste></ticket-liste>-->
         <ticket-item ng-repeat="t in $ctrl.tickets track by $index" ticket-item="t"></ticket-item>
     </div>
 </div>
