@@ -5,6 +5,33 @@
     <div align="center">
         <h1>Profil</h1>
     </div>
+    <div layout="row" class="profil-div">
+        <md-input-container flex="30">
+            <input type="text" name="profil_vorname" ng-model="$ctrl.profil_vorname" placeholder="Vorname" ng-disabled="$ctrl.edit_name_bool">
+        </md-input-container>
+        <md-input-container flex="30">
+            <input type="text" name="profil_nachname" ng-model="$ctrl.profil_nachname" placeholder="Nachname" ng-disabled="$ctrl.edit_name_bool">
+        </md-input-container>
+        <div class="edit_button">
+            <md-button ng-click="$ctrl.editNames()" class="md-fab md-mini md-raised md-primary"><i class="fas fa-pen"></i></md-button>
+        </div>
+    </div>
+    <div layout="row" class="profil-div">
+        <md-input-container flex="70">
+            <input type="email" name="profil_email" ng-model="$ctrl.profil_email" placeholder="email@test.com" ng-disabled="$ctrl.edit_email_bool">
+        </md-input-container>
+        <div class="edit_button">
+            <md-button ng-click="$ctrl.editNames()" class="md-fab md-mini md-raised md-primary"><i class="fas fa-pen"></i></md-button>
+        </div>
+    </div>
+    <div layout="row" class="profil-div">
+        <md-input-container flex="70">
+            <input type="password" name="profil_passwort" ng-model="$ctrl.profil_passwort" placeholder="Passwort" ng-disabled="$ctrl.edit_passwort_bool">
+        </md-input-container>
+        <div class="edit_button">
+            <md-button ng-click="$ctrl.editNames()" class="md-fab md-mini md-raised md-primary"><i class="fas fa-pen"></i></md-button>
+        </div>
+    </div>
     <div layout="column" class="container-item bottom-params">
         <a ui-sref="authentifikation">
             <md-button class="md-raised md-primary big-button">Ausloggen</md-button>
@@ -23,7 +50,7 @@
         <div align="center">
             <h1>Profil</h1>
         </div>
-        <div layout="row" class="container-item bottom-params ">
+        <div layout="row" class="container-item bottom-params">
             <a ui-sref="authentifikation">
                 <md-button class="md-raised md-primary big-button">Ausloggen</md-button>
             </a>
