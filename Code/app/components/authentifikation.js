@@ -10,5 +10,14 @@ app.component("authentifikation", {
 app.controller("AuthentifikationController", function ($log) {
 
     $log.debug("AuthentifikationController()");
+});
 
+app.config(function ($stateProvider, $urlRouterProvider) {
+    $stateProvider.state({
+        name: "authentifikation",
+        url: "/authentifikation",
+        component: "authentifikation"
+    });
+
+    $urlRouterProvider.otherwise("/authentifikation");
 });

@@ -1,0 +1,25 @@
+<div class="lock-size" layout="row" layout-align="center center">
+    <div class="icon-div" layout="column">
+        <md-fab-speed-dial ng-model="$ctrl.burger_menu" ng-click="$ctrl.burger_menu_open = !$ctrl.burger_menu_open" md-open="$ctrl.isOpen" md-direction="left"
+                           ng-class="$ctrl.selectedMode">
+            <md-fab-trigger>
+                <md-button aria-label="menu" class="md-fab md-primary">
+                    <md-icon><i class="fas fa-bars"></i></md-icon>
+                </md-button>
+            </md-fab-trigger>
+
+            <md-fab-actions>
+                <md-button aria-label="Einstellungen" class="md-fab md-raised md-mini">
+                    <md-icon arial-label="Einstellungen"><i class="fas fa-cog"></i></md-icon>
+                </md-button>
+                <md-button aria-label="Statistik" class="md-fab md-raised md-mini">
+                    <md-icon aria-label="Statistik"><i class="far fa-chart-bar"></i></md-icon>
+                </md-button>
+                <md-button aria-label="Kontakt (Admin)" class="md-fab md-raised md-mini">
+                    <md-icon aria-label="Kontakt (Admin)"><i class="fas fa-envelope"></i></md-icon>
+                </md-button>
+            </md-fab-actions>
+        </md-fab-speed-dial>
+        <p ng-hide="true">Menü</p>
+    </div>
+</div>

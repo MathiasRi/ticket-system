@@ -1,0 +1,25 @@
+<div layout="column" class="content-structure" id="ticket_ansicht_user_mobile_ansicht">
+    <div>
+        <menu-navigator-top></menu-navigator-top>
+    </div>
+    <div>
+        <!--<ticket-liste></ticket-liste>-->
+        <ticket-item ng-repeat="t in $ctrl.tickets track by $index" ticket-item="t"></ticket-item>
+    </div>
+    <div>
+        <menu-navigator-footer></menu-navigator-footer>
+    </div>
+</div>
+
+<div layout="row" id="ticket_ansicht_user_desktop_ansicht">
+    <div>
+        <menu-navigator-left></menu-navigator-left>
+    </div>
+    <div class="ticket-ansicht-user-div">
+        <div align="center">
+            <h1>Meine T!ckets</h1>
+        </div>
+        <!--<ticket-liste></ticket-liste>-->
+        <ticket-item ng-repeat="t in $ctrl.tickets track by $index" ticket-item="t"></ticket-item>
+    </div>
+</div>

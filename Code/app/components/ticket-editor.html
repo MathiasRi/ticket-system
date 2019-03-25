@@ -1,0 +1,45 @@
+<div>
+    <form name="$ctrl.te_form">
+        <div layout="column">
+            <div align="center">
+                <h1>Neues T!cket</h1>
+            </div>
+            <div layout="column" class="ticket-editor-input">
+                <div layout="row" class="container-item">
+                    <md-input-container flex="80">
+                        <label>Titel</label>
+                        <input name="te_titel" ng-model="$ctrl.te_titel" type="text" minlength="3" required>
+                        <div ng-messages="$ctrl.te_form.te_titel.$error">
+                            <div ng-message="minlength">Der Titel muss mindestens 3 Zeichen lang sein.</div>
+                            <div ng-message="required">Geben Sie einen Titel ein.</div>
+                        </div>
+                    </md-input-container>
+                </div>
+                <div layout="row" class="container-item">
+                    <md-input-container flex="80">
+                        <label>Kategorie</label>
+                        <md-select name="te_kategorie" ng-model="$ctrl.te_kategorie" required>
+                            <md-option value="kat1">Kategorie 1</md-option>
+                            <md-option value="kat2">Kategorie 2</md-option>
+                            <md-option value="kat3">Kategorie 3</md-option>
+                        </md-select>
+                        <div ng-messages="$ctrl.te_form.te_kategorie.$error">
+                            <div ng-message="required">Bitte wählen Sie eine Kategorie aus.</div>
+                        </div>
+                    </md-input-container>
+                </div>
+            </div>
+            <div layout="column" class="container-item">
+                <div>
+                    <h3>Beschreibung</h3>
+                </div>
+                <div layout="column" flex="100">
+                    <textarea class="description-textarea" name="te_beschreibung" ng-model="$ctrl.te_beschreibung" required></textarea>
+                </div>
+            </div>
+            <div layout="row" class="container-item bottom-params">
+                <md-button class="md-raised md-primary big-button" ng-disabled="$ctrl.te_form.$invalid" ng-click="$ctrl.showConfirm()">Ticket erstellen</md-button>
+            </div>
+        </div>
+    </form>
+</div>

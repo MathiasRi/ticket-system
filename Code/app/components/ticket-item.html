@@ -1,0 +1,12 @@
+<a ng-click="$ctrl.showTicketInfo()">
+<md-list-item class="md-3-line">
+    <div class="md-list-item-text">
+        <h3>{{ $ctrl.ticketItem.title }}</h3>
+        <h4>{{ $ctrl.ticketItem.category }}</h4>
+        <p>{{ $ctrl.ticketItem.id }}</p>
+    </div>
+    <div class="md-secondary">{{ $ctrl.ticketItem.state }}</div>
+    <md-divider ng-if="!$last"></md-divider>
+</md-list-item>
+</a>
+
