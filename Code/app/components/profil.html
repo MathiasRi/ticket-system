@@ -5,31 +5,65 @@
     <div align="center">
         <h1>Profil</h1>
     </div>
+
     <div layout="row" class="profil-div">
         <md-input-container flex="30">
-            <input type="text" name="profil_vorname" ng-model="$ctrl.profil_vorname" placeholder="Vorname" ng-disabled="$ctrl.edit_name_bool">
+            <label ng-hide="$ctrl.hide_vorname_bool">Vorname</label>
+            <input type="text" name="profil_vorname" ng-model="$ctrl.profil_vorname" ng-disabled="$ctrl.edit_name_bool">
         </md-input-container>
         <md-input-container flex="30">
-            <input type="text" name="profil_nachname" ng-model="$ctrl.profil_nachname" placeholder="Nachname" ng-disabled="$ctrl.edit_name_bool">
+            <label ng-hide="$ctrl.hide_nachname_bool">Nachname</label>
+            <input type="text" name="profil_nachname" ng-model="$ctrl.profil_nachname"
+                   ng-disabled="$ctrl.edit_name_bool">
         </md-input-container>
-        <div class="edit_button">
-            <md-button ng-click="$ctrl.editNames()" class="md-fab md-mini md-raised md-primary"><i class="fas fa-pen"></i></md-button>
+        <div class="edit_button" ng-hide="$ctrl.hide_names_edit_button_bool">
+            <md-button ng-click="$ctrl.editNames()" class="md-fab md-mini md-raised md-primary"><i
+                    class="fas fa-pen"></i></md-button>
+        </div>
+        <div class="save_button" ng-hide="$ctrl.hide_names_save_button_bool">
+            <md-button ng-click="$ctrl.saveNames()" class="md-fab md-mini md-raised md-primary"><i
+                    class="fas fa-save"></i></md-button>
         </div>
     </div>
     <div layout="row" class="profil-div">
         <md-input-container flex="70">
-            <input type="email" name="profil_email" ng-model="$ctrl.profil_email" placeholder="email@test.com" ng-disabled="$ctrl.edit_email_bool">
+            <label ng-hide="$ctrl.hide_email_bool">email@test.com</label>
+            <input type="email" name="profil_email" ng-model="$ctrl.profil_email" ng-disabled="$ctrl.edit_email_bool">
         </md-input-container>
-        <div class="edit_button">
-            <md-button ng-click="$ctrl.editNames()" class="md-fab md-mini md-raised md-primary"><i class="fas fa-pen"></i></md-button>
+        <div class="edit_button" ng-hide="$ctrl.hide_email_edit_button_bool">
+            <md-button ng-click="$ctrl.editEmail()" class="md-fab md-mini md-raised md-primary"><i
+                    class="fas fa-pen"></i></md-button>
+        </div>
+        <div class="save_button" ng-hide="$ctrl.hide_email_save_button_bool">
+            <md-button ng-click="$ctrl.saveEmail()" class="md-fab md-mini md-raised md-primary">
+                <i class="fas fa-save"></i></md-button>
         </div>
     </div>
-    <div layout="row" class="profil-div">
+    <div layout="row" class="profil-div" ng-hide="$ctrl.hide_edit_passwort_div">
         <md-input-container flex="70">
-            <input type="password" name="profil_passwort" ng-model="$ctrl.profil_passwort" placeholder="Passwort" ng-disabled="$ctrl.edit_passwort_bool">
+            <label>Passwort</label>
+            <input type="password" name="profil_passwort" ng-model="$ctrl.profil_passwort"
+                   ng-disabled="$ctrl.edit_passwort_bool">
         </md-input-container>
         <div class="edit_button">
-            <md-button ng-click="$ctrl.editNames()" class="md-fab md-mini md-raised md-primary"><i class="fas fa-pen"></i></md-button>
+            <md-button ng-click="$ctrl.editPasswort()" class="md-fab md-mini md-raised md-primary"><i
+                    class="fas fa-pen"></i></md-button>
+        </div>
+    </div>
+    <div layout="row" class="profil-div" ng-hide="$ctrl.hide_save_passwort_div">
+        <div layout="column" flex="70">
+            <md-input-container>
+                <label ng-hide="$ctrl.hide_passwort_bool">Neues Passwort</label>
+                <input type="password" name="profil_passwort" ng-model="$ctrl.profil_passwort">
+            </md-input-container>
+            <md-input-container>
+                <label ng-hide="$ctrl.hide_passwort_bool">Passwort wiederholen</label>
+                <input type="password" name="profil_passwort_wiederholen" ng-model="$ctrl.profil_passwort_wiederholen">
+            </md-input-container>
+        </div>
+        <div id="save_passwort_button" class="save_button">
+            <md-button ng-click="$ctrl.savePasswort()" class="md-fab md-mini md-raised md-primary">
+                <i class="fas fa-save"></i></md-button>
         </div>
     </div>
     <div layout="column" class="container-item bottom-params">
