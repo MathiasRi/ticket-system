@@ -17,9 +17,12 @@ app.config(function ($stateProvider) {
 });
 
 
-app.controller("TicketAnsichtUserController", function ($log) {
+app.controller("TicketAnsichtUserController", function ($log, Ticket) {
 
     $log.debug("TicketAnsichtUserController()");
+
+
+    this.tickets = [new Ticket("Titel1", "Beschreibung1", "Kategorie1"), new Ticket("Titel2", "Beschreibung2", "Kategorie2")];
 
     this.burger_menu_open = false;
 

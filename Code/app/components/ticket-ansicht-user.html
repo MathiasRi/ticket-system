@@ -4,7 +4,7 @@
     </div>
     <div>
         <!--<ticket-liste></ticket-liste>-->
-        <ticket-item></ticket-item>
+        <ticket-item ng-repeat="t in $ctrl.tickets track by $index" ticket-item="t"></ticket-item>
     </div>
     <div>
         <menu-navigator-footer></menu-navigator-footer>
@@ -20,6 +20,6 @@
             <h1>Meine T!ckets</h1>
         </div>
         <!--<ticket-liste></ticket-liste>-->
-        <ticket-item></ticket-item>
+        <ticket-item ng-repeat="t in $ctrl.tickets track by $index" ticket-item="t"></ticket-item>
     </div>
 </div>

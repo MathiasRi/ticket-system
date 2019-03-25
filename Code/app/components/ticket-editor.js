@@ -13,11 +13,20 @@ app.controller("TicketEditorController", function ($log, $mdDialog) {
 
     this.showConfirm = () => {
 
-        let params = `Wollen Sie Ihr Ticket mit dem Titel "${this.te_titel}" (Kategorie: "${this.te_kategorie}") wirklich erstellen?`;
+        let params =  `<div>
+                        <p>Wollen Sie folgendes Ticket erstellen?</p>
+                        <ul>
+                            <li>Titel: ${this.te_titel}</li>
+                            <li>Kategorie: ${this.te_kategorie}</li>
+                            <li>Beschreibung:
+                                <p>${this.te_beschreibung}</p>
+                            </li>
+                        </ul>
+                      </div>`;
 
         let confirm = $mdDialog.confirm()
             .title('Ticket wirklich erstellen?')
-            .textContent(params)
+            .htmlContent(params)
             .ok('Ja')
             .cancel('Nein');
 
@@ -25,12 +34,9 @@ app.controller("TicketEditorController", function ($log, $mdDialog) {
             this.status = 'Hinzugefügt';
             $log.debug("Ticket hinzugefügt.");
 
-            //In Factory hinzufügen
-
-
-
             this.ticket = new Ticket (this.te_titel, this.te_beschreibung, this.te_kategorie);
             this.neuesTicket();
+
             this.te_form.$setUntouched();
             this.te_titel = "";
             this.te_kategorie = "";
