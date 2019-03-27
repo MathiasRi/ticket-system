@@ -16,9 +16,9 @@ app.controller("TicketEditorController", function ($log, $mdDialog) {
         let params =  `<div>
                         <p>Wollen Sie folgendes Ticket erstellen?</p>
                         <ul>
-                            <li>Titel: ${this.te_titel}</li>
-                            <li>Kategorie: ${this.te_kategorie}</li>
-                            <li>Beschreibung:
+                            <li><b>Titel:</b> ${this.te_titel}</li>
+                            <li><b>Kategorie:</b> ${this.te_kategorie}</li>
+                            <li><b>Beschreibung:</b>
                                 <p>${this.te_beschreibung}</p>
                             </li>
                         </ul>
@@ -34,14 +34,13 @@ app.controller("TicketEditorController", function ($log, $mdDialog) {
             this.status = 'Hinzugefügt';
             $log.debug("Ticket hinzugefügt.");
 
-            this.ticket = new Ticket (this.te_titel, this.te_beschreibung, this.te_kategorie);
-            this.neuesTicket();
-
             this.te_form.$setUntouched();
             this.te_titel = "";
             this.te_kategorie = "";
             this.te_beschreibung = "";
 
+            this.ticket = new Ticket (this.te_titel, this.te_beschreibung, this.te_kategorie);
+            this.neuesTicket();
         }, () => {
             this.status = 'Abgebrochen';
             $log.debug("Ticket abgebrochen.");
@@ -56,6 +55,7 @@ app.controller("TicketEditorController", function ($log, $mdDialog) {
 
     this.neuesTicket = () => {
         this.ticketItem({ticket : this.ticket});
+        $log.debug(this.ticketItem);
     };
 
 
