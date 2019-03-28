@@ -144,10 +144,19 @@
     margin-top: 5%;
 }
 
-#save_passwort_button {
+.save_passwort_button {
     margin-top: 15%;
+}
+
+.desktop_save_passwort_button {
+    margin-top: 3.5%;
 }
 
 #profil_mobile_ansicht {
     height: 700px;
+}
+
+.desktop-profil-div {
+    margin-top: 2.5%;
+    margin-left: 20%;
 }
