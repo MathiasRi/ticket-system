@@ -3,7 +3,7 @@
 app.component("ticketEditor", {
     templateUrl: "components/ticket-editor.html",
     controller: "TicketEditorController",
-    bindings: { ticketItem : "&" }
+    bindings: {ticketItem: "&"}
 });
 
 
@@ -13,15 +13,21 @@ app.controller("TicketEditorController", function ($log, $mdDialog) {
 
     this.showConfirm = () => {
 
-        let params =  `<div>
-                        <p>Wollen Sie folgendes Ticket erstellen?</p>
-                        <ul>
-                            <li><b>Titel:</b> ${this.te_titel}</li>
-                            <li><b>Kategorie:</b> ${this.te_kategorie}</li>
-                            <li><b>Beschreibung:</b>
-                                <p>${this.te_beschreibung}</p>
-                            </li>
-                        </ul>
+        let params = `<div>
+                        <div>
+                            <h1>${this.te_titel}</h1>
+                        </div>
+                        <hr>
+                        <div>
+                            <p><b>Kategorie:</b> ${this.te_kategorie}</p>
+                        </div>
+                        <div>
+                            <p>
+                                <b>Beschreibung:</b>
+                                <br>
+                                ${this.te_beschreibung}
+                            </p>
+                        </div>
                       </div>`;
 
         let confirm = $mdDialog.confirm()
@@ -39,7 +45,7 @@ app.controller("TicketEditorController", function ($log, $mdDialog) {
             this.te_kategorie = "";
             this.te_beschreibung = "";
 
-            this.ticket = new Ticket (this.te_titel, this.te_beschreibung, this.te_kategorie);
+            this.ticket = new Ticket(this.te_titel, this.te_beschreibung, this.te_kategorie);
             this.neuesTicket();
         }, () => {
             this.status = 'Abgebrochen';
@@ -54,7 +60,7 @@ app.controller("TicketEditorController", function ($log, $mdDialog) {
 
 
     this.neuesTicket = () => {
-        this.ticketItem({ticket : this.ticket});
+        this.ticketItem({ticket: this.ticket});
         $log.debug(this.ticketItem);
     };
 
