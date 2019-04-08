@@ -149,7 +149,7 @@
 }
 
 .desktop_save_passwort_button {
-    margin-top: 3.5%;
+    margin-top: 4.5%;
 }
 
 #profil_mobile_ansicht {
@@ -159,4 +159,13 @@
 .desktop-profil-div {
     margin-top: 2.5%;
     margin-left: 20%;
+}
+
+/*Ticket-Design*/
+.ticket-id {
+    font-style: italic;
+}
+
+.erstelldatum {
+    font-style: italic;
 }

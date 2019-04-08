@@ -17,12 +17,14 @@
                    ng-disabled="$ctrl.edit_name_bool">
         </md-input-container>
         <div class="edit_button" ng-hide="$ctrl.hide_names_edit_button_bool">
-            <md-button ng-click="$ctrl.editNames()" class="md-fab md-mini md-raised md-primary"><i
-                    class="fas fa-pen"></i></md-button>
+            <md-button ng-click="$ctrl.editNames()" class="md-fab md-mini md-raised md-primary">
+                <i class="fas fa-edit"></i>
+            </md-button>
         </div>
         <div class="save_button" ng-hide="$ctrl.hide_names_save_button_bool">
-            <md-button ng-click="$ctrl.saveNames()" class="md-fab md-mini md-raised md-primary"><i
-                    class="fas fa-save"></i></md-button>
+            <md-button ng-click="$ctrl.saveNames()" class="md-fab md-mini md-raised md-primary">
+                <i class="fas fa-save"></i>
+            </md-button>
         </div>
     </div>
     <div layout="row" class="profil-div">
@@ -31,12 +33,14 @@
             <input type="email" name="profil_email" ng-model="$ctrl.profil_email" ng-disabled="$ctrl.edit_email_bool">
         </md-input-container>
         <div class="edit_button" ng-hide="$ctrl.hide_email_edit_button_bool">
-            <md-button ng-click="$ctrl.editEmail()" class="md-fab md-mini md-raised md-primary"><i
-                    class="fas fa-pen"></i></md-button>
+            <md-button ng-click="$ctrl.editEmail()" class="md-fab md-mini md-raised md-primary">
+                <i class="fas fa-edit"></i>
+            </md-button>
         </div>
         <div class="save_button" ng-hide="$ctrl.hide_email_save_button_bool">
             <md-button ng-click="$ctrl.saveEmail()" class="md-fab md-mini md-raised md-primary">
-                <i class="fas fa-save"></i></md-button>
+                <i class="fas fa-save"></i>
+            </md-button>
         </div>
     </div>
     <div layout="row" class="profil-div" ng-hide="$ctrl.hide_edit_passwort_div">
@@ -46,8 +50,9 @@
                    ng-disabled="$ctrl.edit_passwort_bool">
         </md-input-container>
         <div class="edit_button">
-            <md-button ng-click="$ctrl.editPasswort()" class="md-fab md-mini md-raised md-primary"><i
-                    class="fas fa-pen"></i></md-button>
+            <md-button ng-click="$ctrl.editPasswort()" class="md-fab md-mini md-raised md-primary">
+                <i class="fas fa-edit"></i>
+            </md-button>
         </div>
     </div>
     <div layout="row" class="profil-div" ng-hide="$ctrl.hide_save_passwort_div">
@@ -96,12 +101,14 @@
                        ng-disabled="$ctrl.edit_name_bool">
             </md-input-container>
             <div class="desktop_edit_button" ng-hide="$ctrl.hide_names_edit_button_bool" flex="20">
-                <md-button ng-click="$ctrl.editNames()" class="md-fab md-mini md-raised md-primary"><i
-                        class="fas fa-pen"></i></md-button>
+                <md-button ng-click="$ctrl.editNames()" class="md-fab md-mini md-raised md-primary">
+                    <i class="fas fa-edit"></i>
+                </md-button>
             </div>
             <div class="desktop_save_button" ng-hide="$ctrl.hide_names_save_button_bool" flex="20">
-                <md-button ng-click="$ctrl.saveNames()" class="md-fab md-mini md-raised md-primary"><i
-                        class="fas fa-save"></i></md-button>
+                <md-button ng-click="$ctrl.saveNames()" class="md-fab md-mini md-raised md-primary">
+                    <i class="fas fa-save"></i>
+                </md-button>
             </div>
         </div>
         <div layout="row" class="profil-div desktop-profil-div">
@@ -111,12 +118,14 @@
                        ng-disabled="$ctrl.edit_email_bool">
             </md-input-container>
             <div class="desktop_edit_button" ng-hide="$ctrl.hide_email_edit_button_bool" flex="20">
-                <md-button ng-click="$ctrl.editEmail()" class="md-fab md-mini md-raised md-primary"><i
-                        class="fas fa-pen"></i></md-button>
+                <md-button ng-click="$ctrl.editEmail()" class="md-fab md-mini md-raised md-primary">
+                    <i class="fas fa-edit"></i>
+                </md-button>
             </div>
             <div class="desktop_save_button" ng-hide="$ctrl.hide_email_save_button_bool" flex="20">
                 <md-button ng-click="$ctrl.saveEmail()" class="md-fab md-mini md-raised md-primary">
-                    <i class="fas fa-save"></i></md-button>
+                    <i class="fas fa-save"></i>
+                </md-button>
             </div>
         </div>
         <div layout="row" class="profil-div desktop-profil-div" ng-hide="$ctrl.hide_edit_passwort_div">
@@ -126,8 +135,9 @@
                        ng-disabled="$ctrl.edit_passwort_bool">
             </md-input-container>
             <div class="desktop_edit_button" flex="20">
-                <md-button ng-click="$ctrl.editPasswort()" class="md-fab md-mini md-raised md-primary"><i
-                        class="fas fa-pen"></i></md-button>
+                <md-button ng-click="$ctrl.editPasswort()" class="md-fab md-mini md-raised md-primary">
+                    <i class="fas fa-edit"></i>
+                </md-button>
             </div>
         </div>
         <div layout="row" class="profil-div desktop-profil-div" ng-hide="$ctrl.hide_save_passwort_div">
@@ -144,7 +154,8 @@
             </div>
             <div class="desktop_save_passwort_button desktop_save_button" flex="20">
                 <md-button ng-click="$ctrl.savePasswort()" class="md-fab md-mini md-raised md-primary">
-                    <i class="fas fa-save"></i></md-button>
+                    <i class="fas fa-save"></i>
+                </md-button>
             </div>
         </div>
         <div layout="row" class="container-item bottom-params">
