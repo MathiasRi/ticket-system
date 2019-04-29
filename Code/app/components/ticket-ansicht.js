@@ -1,25 +1,25 @@
 "use strict";
 
-app.component("ticketAnsichtUser", {
-    templateUrl: "components/ticket-ansicht-user.html",
-    controller: "TicketAnsichtUserController",
+app.component("ticketAnsicht", {
+    templateUrl: "components/ticket-ansicht.html",
+    controller: "TicketAnsichtController",
     bindings: {}
 });
 
 
 app.config(function ($stateProvider) {
     $stateProvider.state({
-        name: "ticket-ansicht-user",
-        url: "/ticket-ansicht-user",
-        component: "ticketAnsichtUser"
+        name: "ticket-ansicht",
+        url: "/ticket-ansicht",
+        component: "ticketAnsicht"
     });
 
 });
 
 
-app.controller("TicketAnsichtUserController", function ($log, Ticket) {
+app.controller("TicketAnsichtController", function ($log, Ticket) {
 
-    $log.debug("TicketAnsichtUserController()");
+    $log.debug("TicketAnsichtController()");
 
 
     this.tickets = [new Ticket("Titel1", "Beschreibung1", "Kategorie1"), new Ticket("Titel2", "Beschreibung2", "Kategorie2")];
