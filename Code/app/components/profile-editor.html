@@ -1,3 +1,20 @@
 <div>
-
+    <div>
+        <menu-navigator-top>
+            <md-button>
+                <md-icon md-font-icon="material-icons">arrow_back</md-icon>
+            </md-button>
+        </menu-navigator-top>
+    </div>
+    <div>
+        <md-input-container>
+            <label>Vorname</label>
+            <input type="text" ng-model="$ctrl.vorname" required>
+        </md-input-container>
+        <md-input-container>
+            <label>Nachname</label>
+            <input type="text" ng-model="$ctrl.nachname" required>
+        </md-input-container>
+        <md-button class="md-primary md-raised">Speichern</md-button>
+    </div>
 </div>
