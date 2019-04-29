@@ -26,10 +26,6 @@
 
 @media screen and (min-width: 800px) {
 
-    .ticket-editor-input {
-        flex-direction: row;
-    }
-
     .ticket-editor-input .container-item {
         flex: 50;
     }

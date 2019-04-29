@@ -28,7 +28,7 @@ app.controller("TicketItemController", function ($log, Ticket, $mdDialog) {
                         <div>
                             <h3>Beschreibung:</h3>
                             <p>
-                                Der Beamer im Raum 354 funktioniert nicht. Es wird um eine schnelle Reparatur gebeten, um den Beamer wieder in Betrieb nehmen zu können.
+                                Der Beamer funktioniert nicht. Es wird um eine schnelle Reparatur gebeten, um den Beamer wieder in Betrieb nehmen zu können.
                             </p>
                         </div>
                         <br>
@@ -37,6 +37,7 @@ app.controller("TicketItemController", function ($log, Ticket, $mdDialog) {
                                 <p><b>Status:</b> offen</p>
                                 <p><b>Reporter:</b> Max Mustermann</p>
                                 <p><b>Kategorie:</b> Technik</p>
+                                <p><b>Raum:</b> 354</p>
                             </div>              
                         </div>
                       </div>`;
