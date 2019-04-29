@@ -24,7 +24,16 @@
                             <md-option value="kat3">Kategorie 3</md-option>
                         </md-select>
                         <div ng-messages="$ctrl.te_form.te_kategorie.$error">
-                            <div ng-message="required">Bitte wählen Sie eine Kategorie aus.</div>
+                            <div ng-message="required">Wählen Sie eine Kategorie aus.</div>
+                        </div>
+                    </md-input-container>
+                </div>
+                <div layout="row" class="container-item">
+                    <md-input-container flex="80">
+                        <label>Raumnummer</label>
+                        <input name="te_raumnummer" ng-model="$ctrl.te_raumnummer" type="text" required>
+                        <div ng-messages="$ctrl.te_form.te_raumnummer.$error">
+                            <div ng-message="required">Geben Sie eine Raumnummer ein.</div>
                         </div>
                     </md-input-container>
                 </div>
