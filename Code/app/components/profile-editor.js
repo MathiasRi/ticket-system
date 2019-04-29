@@ -6,7 +6,7 @@ app.component("profileEditor", {
 });
 
 
-app.controller("TicketEditorController", function ($log) {
+app.controller("TicketEditorController", function ($log, $http) {
 
     $log.debug("ProfileEditorController()");
 
@@ -17,5 +17,9 @@ app.controller("TicketEditorController", function ($log) {
             component: "profileEditor"
         });
     });
+
+    this.empfangeDaten = () => {
+        $http.get('localhost/?get=userdata&email=&')
+    }
 
 });
