@@ -131,13 +131,12 @@
     }
 }
 
-.profil-div {
-    margin: 0 5% 0 5%;
-    justify-content: space-between;
+.mobile-profil-div {
+    justify-content: space-evenly;
 }
 
-.edit_button, .save_button {
-    margin-top: 5%;
+.lastname-div {
+    margin-left: 10%;
 }
 
 .save_passwort_button {
@@ -149,7 +148,16 @@
 }
 
 #profil_mobile_ansicht {
-    height: 700px;
+    height: 750px;
+}
+
+.repeat-password-div {
+    margin-top: 40px;
+}
+
+.buttons-div {
+    margin-right: 24%;
+    justify-content: space-between;
 }
 
 .desktop-profil-div {
