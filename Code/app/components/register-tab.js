@@ -26,7 +26,7 @@ app.controller("RegisterTabController", function ($log, $mdDialog, $http, $state
 
     this.registerUser = () => {
         let register_promise = $http
-            .get(`http://localhost/ticket-system/Code/app/index.php`,
+            .get(`http://localhost/GAV/ticket-system/Code/app/index.php`,
                 {
                     params : {
                         insert : 'userdata',
