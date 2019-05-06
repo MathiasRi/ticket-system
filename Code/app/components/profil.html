@@ -6,7 +6,7 @@
         <h1>Profil</h1>
     </div>
 
-    <div layout="row" class="profil-div">
+    <div layout="row" class="mobile-profil-div">
         <md-input-container flex="30">
             <label ng-hide="$ctrl.hide_vorname_bool">Vorname</label>
             <input type="text" name="profil_vorname" ng-model="$ctrl.profil_vorname">
@@ -16,19 +16,19 @@
             <input type="text" name="profil_nachname" ng-model="$ctrl.profil_nachname">
         </md-input-container>
     </div>
-    <div layout="row" class="profil-div">
+    <div layout="row" class="mobile-profil-div">
         <md-input-container flex="70">
             <label ng-hide="$ctrl.hide_email_bool">email@test.com</label>
             <input type="email" name="profil_email" ng-model="$ctrl.profil_email">
         </md-input-container>
     </div>
-    <div layout="row" class="profil-div">
+    <div layout="row" class="mobile-profil-div">
         <md-input-container flex="70">
             <label>Passwort</label>
             <input type="password" name="profil_passwort" ng-model="$ctrl.profil_passwort">
         </md-input-container>
     </div>
-    <div layout="row" class="profil-div">
+    <div layout="row" class="mobile-profil-div">
         <div layout="column" flex="70">
             <md-input-container>
                 <label ng-hide="$ctrl.hide_passwort_bool">Neues Passwort</label>
@@ -65,7 +65,7 @@
                 <label ng-hide="$ctrl.hide_vorname_bool">Vorname</label>
                 <input type="text" name="profil_vorname" ng-model="$ctrl.profil_vorname">
             </md-input-container>
-            <md-input-container flex="30">
+            <md-input-container class="lastname-div" flex="30">
                 <label ng-hide="$ctrl.hide_nachname_bool">Nachname</label>
                 <input type="text" name="profil_nachname" ng-model="$ctrl.profil_nachname">
             </md-input-container>
