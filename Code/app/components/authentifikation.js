@@ -16,7 +16,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
     $stateProvider.state({
         name: "authentifikation",
         url: "/authentifikation",
-        component: "authentifikation"
+        component: "authentifikation",
     });
 
     $urlRouterProvider.otherwise("/authentifikation");
