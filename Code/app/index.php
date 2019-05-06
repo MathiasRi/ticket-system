@@ -107,3 +107,40 @@ if(isset($_GET['insert']) && $_GET['insert'] == 'ticket') {
     echo 'Ticket inserted.';
 
 }
+
+//GET USERDATA FROM DATABASE
+//url/?get=userinfos&email=<EMAIL>
+
+if($_GET['get'] == 'userinfo') {
+    $pdo = new PDO($dsn, $user, $password);
+        $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);
+        $pdo->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
+
+        $email = $_GET['email'];
+        $sql = 'SELECT * FROM individual WHERE Email = :email;
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute('email' => $email);
+        $user_data = $stmt->fetchAll();
+
+        echo json_encode($user_data);
+}
+
+//CHANGE USERDATA ON DATABASE
+//url/?update=userdata&vorname=<VORNAME>&nachname=<NACHNAME>&email=<EMAIL>&pw=<PW>&token=<TOKEN>
+
+if(isset($_GET['insert']) && $_GET['insert'] == 'userdata') {
+    $pdo = new PDO($dsn, $user, $password);
+    $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);
+    $pdo->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
+
+    $vorname = $_GET['vorname'];
+    $nachname = $_GET['nachname'];
+    $email = $_GET['email'];
+    $pw = $_GET['pw'];
+    $token = $_GET['token'];
+
+    $sql = 'UPDATE SET FirstName=:vorname, Lastname=:nachname, Email=:email, Password=:pw WHERE FK_Token=:token';
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute(['email' => $email, 'pw' => $pw, 'firstname' => $vorname, 'lastname' => $nachname, 'token' => $token]);
+    echo 'User updated.';
+}
