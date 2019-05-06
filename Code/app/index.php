@@ -59,10 +59,30 @@ if(isset($_GET['insert']) && $_GET['insert'] == 'userdata') {
     $token = $_GET['token'];
     $pw = $_GET['pw'];
 
-    $sql = 'INSERT INTO individual(FK_Token, Email, Password, FirstName, LastName) VALUES(:token, :email, :pw, :firstname, :lastname)';
+    $sql = 'SELECT * FROM token_role';
     $stmt = $pdo->prepare($sql);
-    $stmt->execute(['token' => $token, 'email' => $email, 'pw' => $pw, 'firstname' => $vorname, 'lastname' => $nachname]);
-    echo 'User inserted.';
+    $stmt->execute();
+
+    while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
+            if($token == $row['PK_Token_ID']) {
+                if($row['activated'] == 0) {
+                    $sql = 'INSERT INTO individual(FK_Token, Email, Password, FirstName, LastName) VALUES(:token, :email, :pw, :firstname, :lastname)';
+                    $stmt = $pdo->prepare($sql);
+                    $stmt->execute(['token' => $token, 'email' => $email, 'pw' => $pw, 'firstname' => $vorname, 'lastname' => $nachname]);
+
+                    $sql = 'UPDATE token_role SET activated=1';
+                    $stmt = $pdo->prepare($sql);
+                    $stmt->execute();
+
+                    echo 'User inserted.';
+                    break;
+                } elseif ($row['activated'] == 1) {
+                    echo 'Token exists.';
+                    break;
+                }
+            }
+
+    }
 }
 
 //INSERT TICKET INTO DATABASE
