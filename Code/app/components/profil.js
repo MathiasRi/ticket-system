@@ -28,6 +28,7 @@ app.controller("ProfilController", function ($log, $http) {
                     get : 'userinfo',
                     email : this.login_email,
                     pw : this.login_password
+                    
                 }
     }
 
