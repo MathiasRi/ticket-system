@@ -13,7 +13,7 @@ app.controller("LoginTabController", function ($log, $http, $state) {
 
     this.loginUser = () => {
         let login_promise = $http
-            .get(`http://localhost/ticket-system-master/Code/app/index.php`,
+            .get(`http://localhost/ticket-system/Code/app/index.php`,
                 {
                     params : {
                         get : 'userdata',
