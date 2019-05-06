@@ -17,7 +17,7 @@ app.config(function ($stateProvider) {
 });
 
 
-app.controller("TicketAnsichtController", function ($log, Ticket) {
+app.controller("TicketAnsichtController", function ($log, Ticket, User, StorageService) {
 
     $log.debug("TicketAnsichtController()");
 
@@ -36,6 +36,14 @@ app.controller("TicketAnsichtController", function ($log, Ticket) {
 
     this.availableDirections = ['up', 'down', 'left', 'right'];
     this.selectedDirection = 'down';
+
+
+    this.user = StorageService.laden();
+
+    if(this.user.pk_individual_id == 'X') {
+        $state.go('authentifikation');
+    }
+
 
 });
 
