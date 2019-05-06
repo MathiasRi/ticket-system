@@ -22,7 +22,13 @@ app.controller("ProfilController", function ($log, $http) {
     $log.debug("ProfilController()");
 
     this.profilDaten = () => {
-        $http.get('localhost/?get=userdata&email=')
+        $http.get('http://localhost/ticket-system/Code/app/index.php'),
+            {
+                params : {
+                    get : 'userinfo',
+                    email : this.login_email,
+                    pw : this.login_password
+                }
     }
 
     this.unsavedChanges = () => {
