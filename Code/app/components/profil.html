@@ -36,7 +36,7 @@
         </div>
     </div>
     <div layout="column" class="container-item bottom-params">
-        <md-button class="md-raised md-primary big-button" ng-disabled="!($ctrl.unsavedChanges)">Speichern</md-button>
+        <md-button class="md-raised md-primary big-button" ng-disabled="!($ctrl.unsavedChanges)" ng-click="$ctrl.datenChange()">Speichern</md-button>
         <a ui-sref="authentifikation">
             <md-button class="md-raised md-primary big-button">Ausloggen</md-button>
         </a>
@@ -85,7 +85,7 @@
             </div>
         </div>
         <div layout="row" class="container-item bottom-params">
-            <md-button class="md-raised md-primary big-button" ng-disabled="!$ctrl.unsavedChanges">Speichern</md-button>
+            <md-button class="md-raised md-primary big-button" ng-disabled="!$ctrl.unsavedChanges" ng-click="$ctrl.datenChange()">Speichern</md-button>
             <a ui-sref="authentifikation">
                 <md-button class="md-raised md-primary big-button">Ausloggen</md-button>
             </a>
