@@ -26,15 +26,15 @@ app.controller("RegisterTabController", function ($log, $mdDialog, $http, $state
 
     this.registerUser = () => {
         let register_promise = $http
-            .get(`http://localhost/GAV/ticket-system/Code/app/index.php`,
+            .get(`http://localhost/ticket-system/Code/app/index.php`,
                 {
-                    params : {
-                        insert : 'userdata',
-                        vorname : this.reg_vorname,
-                        nachname : this.reg_nachname,
-                        email : this.reg_email,
-                        token : this.reg_token,
-                        pw : this.reg_password_1
+                    params: {
+                        insert: 'userdata',
+                        vorname: this.reg_vorname,
+                        nachname: this.reg_nachname,
+                        email: this.reg_email,
+                        token: this.reg_token,
+                        pw: this.reg_password_1
                     }
                 })
             .then(response => {
