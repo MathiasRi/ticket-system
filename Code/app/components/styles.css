@@ -173,3 +173,15 @@
 .erstelldatum {
     font-style: italic;
 }
+
+.offen {
+    color: red;
+}
+
+.außenstehend {
+    color: orange;
+}
+
+.abgeschlossen {
+    color: green;
+}

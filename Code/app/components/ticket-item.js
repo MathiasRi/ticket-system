@@ -13,32 +13,41 @@ app.controller("TicketItemController", function ($log, Ticket, $mdDialog) {
 
     this.showTicketInfo = () => {
 
+        this.title = this.ticketItem.title || "";
+        this.description = this.ticketItem.description || "";
+        this.category = this.ticketItem.category || "";
+        this.id = this.ticketItem.id;
+        this.creation_date = this.ticketItem.creation_date;
+        this.state = this.ticketItem.state;
+        this.room = this.ticketItem.room;
+        this.ersteller = this.ticketItem.ersteller;
+
         let params = `<div>
                         <div class="ticket-id">
-                            <h3>[ID-200]</h3>
+                            <h3>[ID-${this.id}]</h3>
                         </div>
                         <div>
-                            <h1>Beamer funktioniert nicht</h1>
+                            <h1>${this.title}</h1>
                         </div>
                         <hr>
-                        <div class="erstelldatum">
-                            <p><b>Erstelldatum:</b> 16.02.2019</p>
+                        <div>
+                            <p class="erstelldatum"><b>Erstelldatum: </b>${this.creation_date}</p>
                         </div>
                         <br>
                         <div>
                             <h3>Beschreibung:</h3>
                             <p>
-                                Der Beamer funktioniert nicht. Es wird um eine schnelle Reparatur gebeten, um den Beamer wieder in Betrieb nehmen zu können.
+                                ${this.description}
                             </p>
                         </div>
                         <br>
                         <div>
-                            <div>
-                                <p><b>Status:</b> offen</p>
-                                <p><b>Reporter:</b> Max Mustermann</p>
-                                <p><b>Kategorie:</b> Technik</p>
-                                <p><b>Raum:</b> 354</p>
-                            </div>              
+                            <div id="info">
+                                <p><b>Status: </b><span class="${this.state}">${this.state}</span></p>
+                                <p><b>Ersteller: </b>${this.ersteller}</p>
+                                <p><b>Kategorie: </b>${this.category}</p>
+                                <p><b>Raum: </b>${this.room}</p>
+                            </div>
                         </div>
                       </div>`;
 
