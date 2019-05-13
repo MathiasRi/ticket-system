@@ -22,7 +22,7 @@ app.controller("ProfilController", function ($log, $http, StorageService, User) 
 
     $log.debug("ProfilController()");
 
-    
+
         this.profilDaten = StorageService.laden();
 
     $http.get(`http://localhost/ticket-system/Code/app/index.php`,
