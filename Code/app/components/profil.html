@@ -9,17 +9,17 @@
     <div layout="row" class="mobile-profil-div">
         <md-input-container flex="30">
             <label></label>
-            <input type="text" name="profil_vorname" ng-model="$ctrl.profil_vorname" value="{{ctrl.profilDaten.firstname}}">
+            <input type="text" name="profil_vorname" ng-model="$ctrl.profil_vorname" value="ctrl.profilDaten.firstname">
         </md-input-container>
         <md-input-container flex="30">
             <label></label>
-            <input type="text" name="profil_nachname" ng-model="$ctrl.profil_nachname" value="{{$ctrl.profilDaten.lastname}}">
+            <input type="text" name="profil_nachname" ng-model="$ctrl.profil_nachname" value="$ctrl.profilDaten.lastname">
         </md-input-container>
     </div>
     <div layout="row" class="mobile-profil-div">
         <md-input-container flex="70">
             <label></label>
-            <input type="email" name="profil_email" ng-model="$ctrl.profil_email" value="{{$ctrl.profilDaten.email}}">
+            <input type="email" name="profil_email" ng-model="$ctrl.profil_email" value="$ctrl.profilDaten.email">
         </md-input-container>
     </div>
     <div layout="row" class="mobile-profil-div">
@@ -58,17 +58,17 @@
         <div layout="row" class="profil-div desktop-profil-div">
             <md-input-container flex="30">
                 <label></label>
-                <input type="text" name="profil_vorname" ng-model="$ctrl.profil_vorname" value="{{$ctrl.profilDaten.firstname}}">
+                <input type="text" name="profil_vorname" ng-model="$ctrl.profil_vorname" ng-value="$ctrl.profilDaten.firstname">
             </md-input-container>
             <md-input-container class="lastname-div" flex="30">
                 <label></label>
-                <input type="text" name="profil_nachname" ng-model="$ctrl.profil_nachname" value="{{$ctrl.profilDaten.lastname}}">
+                <input type="text" name="profil_nachname" ng-model="$ctrl.profil_nachname" ng-value="$ctrl.profilDaten.lastname">
             </md-input-container>
         </div>
         <div layout="row" class="profil-div desktop-profil-div">
             <md-input-container flex="70">
                 <label></label>
-                <input type="email" name="profil_email" ng-model="$ctrl.profil_email" value="{{$ctrl.profilDaten.email}}">
+                <input type="email" name="profil_email" ng-model="$ctrl.profil_email" ng-value="$ctrl.profilDaten.email">
             </md-input-container>
         </div>
         <div layout="row" class="profil-div desktop-profil-div">
