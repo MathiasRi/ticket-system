@@ -22,7 +22,7 @@ app.controller("ProfilController", function ($log, $http, StorageService, User) 
 
     $log.debug("ProfilController()");
 
-    $onInit = () => {
+    this.$onInit = () => {
         this.profilDaten = StorageService.laden();
     }
 
