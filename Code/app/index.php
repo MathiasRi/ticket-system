@@ -109,7 +109,7 @@ if(isset($_GET['insert']) && $_GET['insert'] == 'ticket') {
 
 
 //GET USERDATA FROM DATABASE
-//url/?get=userinfos&email=<EMAIL>
+//url/?get=userinfo&email=<EMAIL>
 
 if($_GET['get'] == 'userinfo') {
     $pdo = new PDO($dsn, $user, $password);
@@ -125,10 +125,10 @@ if($_GET['get'] == 'userinfo') {
         echo json_encode($user_data);
 }
 
-//CHANGE USERDATA ON DATABASE
+//CHANGE USERDATA ON DATABASE EXPERIMENTEL
 //url/?update=userdata&vorname=<VORNAME>&nachname=<NACHNAME>&email=<EMAIL>&pw=<PW>&token=<TOKEN>
 
-if(isset($_GET['insert']) && $_GET['insert'] == 'userdata') {
+if(isset($_GET['update']) && $_GET['update'] == 'userdata') {
     $pdo = new PDO($dsn, $user, $password);
     $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);
     $pdo->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
