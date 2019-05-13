@@ -22,9 +22,8 @@ app.controller("ProfilController", function ($log, $http, StorageService, User) 
 
     $log.debug("ProfilController()");
 
-    this.$onInit = () => {
+    
         this.profilDaten = StorageService.laden();
-    }
 
     $http.get(`http://localhost/ticket-system/Code/app/index.php`,
             {
@@ -36,11 +35,7 @@ app.controller("ProfilController", function ($log, $http, StorageService, User) 
                     pw: this.profil_password,
                     token: this.profilDaten.fk_token
                 }
-            })
-        .then(response => {
-            $state.reload();
-            console.log(response);
-        });
+            });
 
     this.unsavedChanges = () => {
         if (this.profil_vorname !== thisprofilDaten['vorname'] || this.profil_nachname !== thisprofilDaten['nachname'] || this.profil_email !== thisprofilDaten['email'] || (this.profil_passwort !== thisprofilDaten['passwort'] && this.profil_passwort !== this.profil_passwort_wiederholen)) {
