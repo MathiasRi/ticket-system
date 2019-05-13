@@ -22,24 +22,24 @@ app.controller("ProfilController", function ($log, $http, StorageService, User) 
 
     $log.debug("ProfilController()");
 
+    $onInit = () => {
+        this.profilDaten = StorageService.laden();
+    }
+
     $http.get(`http://localhost/ticket-system/Code/app/index.php`,
             {
                 params : {
-                    get : 'userinfo',
-                    email : this.login_email
+                    update : 'userdata',
+                    vorname: this.profil_vorname,
+                    nachname: this.profil_nachname,
+                    email: this.profil_email,
+                    pw: this.profil_password,
+                    token: this.profilDaten.fk_token
                 }
             })
         .then(response => {
+            $state.reload();
             console.log(response);
-            if (response.data.length != 0) {
-
-                this.pk_individual_id = response.data[0]['PK_Individual_Id'];
-                this.email = response.data[0]['Email'];
-                this.password = response.data[0]['Password'];
-                this.firstname = response.data[0]['FirstName'];
-                this.lastname = response.data[0]['LastName'];
-                this.fk_token = response.data[0]['FK_Token'];
-            }
         });
 
     this.unsavedChanges = () => {
